@@ -18,5 +18,5 @@
 #
 ---
 include:
-  - board: ADAFRUIT_FEATHER_NRF52840
+  - board: adafruit_feather_nrf52840
     shield: Archon_v2
