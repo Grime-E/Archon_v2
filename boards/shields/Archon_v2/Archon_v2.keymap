@@ -222,11 +222,11 @@
         compatible = "zmk,keymap";
 
         DEFAULT {
-        bindings = < &kp ESC &kp ctrl_c &kp ctrl_v &kp ctrl_x &kp ctrl_shift_n
-                    &kp Plus_1_Plus &kp ctrl_shift_2 &kp arx6e &kp tshirt &kp hoodie &kp C_PLAY_PAUSE
-                    &kp Plus_2_Plus &kp black &kp military &kp back &kp lc &kp ctrl_p
-                    &kp ctrl_g &kp F1 &kp F2 &kp F3 &kp F4
-                    &kp ENTER &kp TAB &kt LALT &kp DEL 
+        bindings = < &kp A &kp B &kp C &kp D &kp E
+                    &kp F &kp G &kp H &kp I &kp J &kp K
+                    &kp L &kp M &kp N &kp O &kp P &kp Q
+                    &kp R &kp S &kp T &kp U &kp V
+                    &kp ENTER &kp W &kt X &kp Y 
             >;
         };
 
