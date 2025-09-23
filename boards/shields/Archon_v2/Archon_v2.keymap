@@ -226,7 +226,7 @@
                     &Plus_1_Plus &ctrl_shift_2 &arx6e &tshirt &hoodie &kp C_PLAY_PAUSE
                     &Plus_2_Plus &black &military &back &lc &ctrl_p
                     &ctrl_g &kp F1 &kp F2 &kp F3 &kp F4
-                    &kp ENTER &kp TAB &kt LALT &kp DEL >;
+                    &kp ENTER &kp TAB &kt LALT &kp DEL 
             >;
         };
 
