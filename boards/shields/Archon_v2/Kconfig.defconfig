@@ -7,3 +7,10 @@ config ZMK_KEYBOARD_NAME
 
 CONFIG_ZMK_SETTINGS_SAVE_DEBOUNCE=60000
 CONFIG_ZMK_BLE=y
+
+# Uncomment to enable Encoders
+#CONFIG_EC11=y
+#CONFIG_EC11_TRIGGER_GLOBAL_THREAD=y
+
+# Uncomment the following line to enable the Knob Goblin OLED Display
+#CONFIG_ZMK_DISPLAY=y
