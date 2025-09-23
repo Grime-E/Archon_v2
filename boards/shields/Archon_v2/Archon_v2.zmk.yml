@@ -4,5 +4,8 @@ name: Archon_v2
 type: shield
 url: https://github.com/Grime-E/Archon_v2.git
 requires: [pro_micro]
+exposes: [i2c_oled]
 features:
   - keys
+  - display
+  - encoder
