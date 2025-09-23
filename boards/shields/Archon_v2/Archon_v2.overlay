@@ -1,18 +1,10 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-	model = "archon";
-	compatible = "archon,nrf52840";
-
 	chosen {
 		zmk,kscan = &kscan0;
 		zmk,matrix_transform = &default_transform;
-		zmk,battery = &vbatt;
 	};
-
-    vbatt: vbatt {
-        compatible = "zmk,battery-nrf-vddh";
-    };
 
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
