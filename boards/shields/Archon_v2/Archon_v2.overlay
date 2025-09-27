@@ -50,7 +50,7 @@
         >;
 	};
 
-	    top_encoder: encoder_top {
+	top_encoder: encoder_top {
         compatible = "alps,ec11";
         a-gpios = <&pro_micro 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -71,7 +71,6 @@
         sensors = <&top_encoder &bottom_encoder>;
         triggers-per-rotation = <20>;
     };
-
 };
 
 &pro_micro_i2c {
