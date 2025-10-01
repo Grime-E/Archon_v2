@@ -63,6 +63,19 @@
                 <&macro_tap &kp E>;
         };
 
+        // Macro for Tank
+        tank: tank {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_tap &kp LS(T)>,
+                <&macro_release &kp LS(T)>,
+                <&macro_tap &kp A>,
+                <&macro_tap &kp N>,
+                <&macro_tap &kp K>;
+
+        };
+
         // Macro for Military
         military: military {
             compatible = "zmk,behavior-macro";
@@ -155,6 +168,16 @@
                 <&macro_release &kp LEFT_CONTROL>;
         };
 
+        // Macro for Ctrl + B (Back)
+        ctrl_b: ctrl_b {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LEFT_CONTROL>,
+                <&macro_tap &kp B>,
+                <&macro_release &kp LEFT_CONTROL>;
+        };
+
         // Macro for Ctrl + Shift + 2 (View Large Icon)
         ctrl_shift_2: ctrl_shift_2 {
             compatible = "zmk,behavior-macro";
@@ -212,9 +235,51 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LEFT_CONTROL>,
+                <&macro_press &kp RIGHT_CONTROL>,
                 <&macro_tap &kp P>,
-                <&macro_release &kp LEFT_CONTROL>;
+                <&macro_release &kp RIGHT_CONTROL>;
+        };
+
+        // Macro for ScreenShot
+        screen_shot: screen_shot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press &kp LEFT_WIN>,
+                <&macro_press &kp RIGHT_SHIFT>,
+                <&macro_tap &kp S>,
+                <&macro_release &kp LEFT_WIN>,
+                <&macro_release &kp RIGHT_SHIFT>;
+        };
+
+        // Macro for Snap Window Left
+        snap_left: snap_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press &kp LEFT_WIN>,
+                <&macro_tap &kp LEFT_ARROW>,
+                <&macro_release &kp LEFT_WIN>;
+        };
+
+        // Macro for Snap Window Right
+        snap_right: snap_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press &kp LEFT_WIN>,
+                <&macro_tap &kp RIGHT_ARROW>,
+                <&macro_release &kp LEFT_WIN>;
+        };
+
+        // Macro for Min. All Windows
+        min_all: min_all {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press &kp LEFT_WIN>,
+                <&macro_tap &kp M>,
+                <&macro_release &kp LEFT_WIN>;
         };
     };
 
@@ -223,15 +288,15 @@
 
         DEFAULT {
         bindings = < 
-                    &kp A &kp B &kp C &kp D &kp E
-                    &kp F &kp G &kp H &kp I &kp J &kp K
-                    &kp L &kp M &kp N &kp O &kp P &kp Q
-                    &kp R &kp S &kp T &kp U &kp V
-                    &kp W       &kp X &kp Y &kp Z 
+                    &kp ctrl_p      &kp snap_left   &kp min_all      &kp lc           &kp snap_right
+                    &kp screen_shot &kp tshirt      &kp hoodie       &kp ctrl_shift_2 &kp tank          &bt BT_SEL 0
+                    &kp ctrl_c      &kp Plus_1_Plus &kp Plus_2_Plus  &kp ctrl_g       &kp ctrl_shift_n  &bt BT_CLR
+                    &kp ctrl_v      &kp F1          &kp F2           &kp F3           &kp F4
+                    &kp ENTER                       &kp C_PREV       &kp C_PLAY_PAUSE &kp C_NEXT 
             >;
         sensor-bindings = 
-                <&inc_dec_kp C_VOL_UP C_VOL_DN
-                 &inc_dec_kp PG_UP PG_DN>;
+                <&inc_dec_kp PG_UP PG_DN
+                 &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
