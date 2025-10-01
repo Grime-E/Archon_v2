@@ -229,16 +229,8 @@
                     &kp R &kp S &kp T &kp U &kp V
                     &kp W       &kp X &kp Y &kp Z 
             >;
+        sensor-bindings = 
+                <&kp C_VOL_UP &kp C_VOL_DN &kp K_SCROLL_UP &kp K_SCROLL_DOWN>;
         };
-
-        sensor-bindings {
-            compatible = "zmk,sensor-bindings";
-            sensors = <&top_encoder &bottom_encoder>;
-            bindings = <
-                &kp C_VOL_UP &kp C_VOL_DN  // Top encoder: Volume Up/Down
-                &kp K_SCROLL_UP &kp K_SCROLL_DOWN // Bottom encoder: Scroll Up/Down
-            >;
-        };
-
-	};
+    };
 };
