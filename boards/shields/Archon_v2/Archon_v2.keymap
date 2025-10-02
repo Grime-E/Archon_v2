@@ -203,18 +203,22 @@
         Plus_1_Plus: Plus_1_Plus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <300>;    
+            wait-ms = <500>;    // Add this line to set the wait time
+            wait-ms = <450>;
+            wait-ms = <450>;    
             bindings =
                 <&macro_tap &kp KP_PLUS>,
                 <&macro_tap &kp N1>,
                 <&macro_tap &kp KP_PLUS>;
         };
-        
+
         // Macro for Plus + 2 + Plus (Printer 2)
         Plus_2_Plus: Plus_2_Plus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <300>;    
+            wait-ms = <500>;    // Add this line to set the wait time
+            wait-ms = <450>;
+            wait-ms = <450>;
             bindings =
                 <&macro_tap &kp KP_PLUS>,
                 <&macro_tap &kp N2>,
