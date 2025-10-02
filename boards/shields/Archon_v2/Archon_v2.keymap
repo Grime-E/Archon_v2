@@ -293,7 +293,7 @@
 
         DEFAULT {
         bindings = < 
-                    &ctrl_p      &snap_left   &min_all      &lc              &snap_right
+                    &ctrl_p      &snap_left   &min_all      &bt BT_CLR_ALL   &snap_right
                     &screen_shot &tshirt      &hoodie       &ctrl_shift_2    &tank          &bt BT_SEL 0
                     &ctrl_c      &Plus_1_Plus &Plus_2_Plus  &ctrl_g          &ctrl_shift_n  &bt BT_CLR
                     &ctrl_v      &kp F1       &kp F2        &kp F3           &kp F4
