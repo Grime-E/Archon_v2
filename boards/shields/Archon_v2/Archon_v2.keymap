@@ -326,8 +326,8 @@
         LOW {
         bindings = < 
                     &bt BT_PRV   &bt BT_CLR   &bt BT_NXT   
-                    &sort        &bt BT_SEL 0 &kp ctrl_p           &dtg      &trans
-                    &bootloader               &kp C_VOLUME_DOWN    &ctrl_p   &kp C_VOLUME_UP
+                    &sort        &bt BT_SEL 0 &ctrl_p              &dtg      &trans
+                    &bootloader               &kp C_VOLUME_DOWN    &ctrl_b   &kp C_VOLUME_UP
                 >;
         };
     };
