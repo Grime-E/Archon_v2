@@ -286,6 +286,30 @@
                 <&macro_tap &kp M>,
                 <&macro_release &kp LEFT_WIN>;
         };
+
+        // Macro for DTG Automation (powershell launcher)
+        dtg: dtg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LEFT_CONTROL>,
+                <&macro_press &kp LEFT_ALT>,
+                <&macro_tap &kp D>,
+                <&macro_release &kp LEFT_CONTROL>
+                <&macro_release &kp LEFT_ALT>;
+        };
+
+        // Macro for WRO Sort (powershell launcher)
+        sort: sort {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LEFT_CONTROL>,
+                <&macro_press &kp LEFT_ALT>,
+                <&macro_tap &kp W>,
+                <&macro_release &kp LEFT_CONTROL>
+                <&macro_release &kp LEFT_ALT>;
+        };
     };
 
     keymap {
@@ -301,9 +325,9 @@
 
         LOW {
         bindings = < 
-                    &bt BT_PRV   &bt BT_CLR   &bt BT_NXT      
-                    &bt BT_SEL 0 &bt BT_SEL 1 &ctrl_p           &ctrl_b      &none
-                    &bootloader	              &kp C_VOLUME_DOWN &ctrl_p      &kp C_VOLUME_UP
+                    &bt BT_PRV   &bt BT_CLR   &bt BT_NXT   
+                    &sort        &bt BT_SEL 0 &bt BT_SEL 1         &wro      &trans
+                    &bootloader               &kp C_VOLUME_DOWN    &ctrl_p   &kp C_VOLUME_UP
                 >;
         };
     };
