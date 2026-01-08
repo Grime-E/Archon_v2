@@ -24,26 +24,6 @@
 
         };
 
-        // Macro for Ctrl + Shift + 2 (View Large Icon)
-        ctrl_shift_2: ctrl_shift_2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press &kp LEFT_CONTROL &kp LSHFT>,
-                <&macro_tap &kp N2>,
-                <&macro_release &kp LEFT_CONTROL &kp LSHFT>;
-        };
-
-        // Macro for Ctrl + Backspace (Delete Previous Word)
-        ctrl_backspace: ctrl_backspace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press &kp LEFT_CONTROL>,
-                <&macro_tap &kp BSPC>,
-                <&macro_release &kp LEFT_CONTROL>;
-        };
-
         // Macro for Plus + 1 + Plus (Printer 1)
         Plus_1_Plus: Plus_1_Plus {
             compatible = "zmk,behavior-macro";
