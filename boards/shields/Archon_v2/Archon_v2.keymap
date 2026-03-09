@@ -130,6 +130,16 @@
                 <&macro_tap &kp B>,
                 <&macro_release &kp LEFT_CONTROL>;
         };
+      
+        // Macro for Ctrl + N (Next)
+        ctrl_n: ctrl_n {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LEFT_CONTROL>,
+                <&macro_tap &kp N>,
+                <&macro_release &kp LEFT_CONTROL>;
+        };
     };
 
     keymap {
@@ -145,7 +155,7 @@
 
         LOW {
         bindings = < 
-                    &bt BT_PRV   &bt BT_CLR   &bt BT_NXT           &none   
+                    &bt BT_PRV   &bt BT_CLR   &bt BT_NXT           &ctrl_n   
                     &sort        &dtg         &ctrl_p              &ctrl_g      &trans
                     &bootloader               &kp C_VOLUME_DOWN    &ctrl_b   &kp C_VOLUME_UP
                 >;
