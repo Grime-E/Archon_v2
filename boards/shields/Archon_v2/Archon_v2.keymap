@@ -9,6 +9,31 @@
 #define LOWER   2
 
 / {
+    behaviors {
+        lt_gtx: layer_tap_gtx600 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&ctrl_g>;
+
+        };
+
+        td_printers: tap_dance_printers {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>; // Time window to register the second tap
+            bindings = <&Plus_1_Plus>, <&Plus_2_Plus>;
+        };
+
+        td_printers_2: tap_dance_printers_2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>; // Time window to register the second tap
+            bindings = <&ENTER_1_ENTER>, <&ENTER_2_ENTER>;
+        };
+    };
+
     macros {
 
          // Macro for .arx6e
@@ -152,25 +177,25 @@
 
         DEFAULT {
         bindings = < 
-                    &Plus_1_Plus &Plus_2_Plus &ENTER_1_ENTER &ENTER_2_ENTER      
-                    &kp F1       &kp F2       &kp F3         &kp F4            &mo LOW
-                    &kp ENTER                 &ctrl_shift_n  &ctrl_g           &ctrl_n
+                    &ctrl_shift_n  &ctrl_n        &lt_gtx LOW 0
+                    &kp F1    &kp F2    &kp F3    &kp F4            
+                    &td_printers                  &td_printers_2
                 >;       
         };
 
         LOW {
         bindings = < 
-                    &none        &none        &none          &none      
-                    &sort        &dtg         &ctrl_p        &mo LOWER         &trans
-                    &none                     &kp C_PREVIOUS &kp C_PLAY_PAUSE  &kp C_NEXT
+                    &kp C_VOLUME_UP   &mo LOWER              &trans               
+                    &kp C_VOLUME_DOWN &kp C_PLAY_PAUSE &sort &dtg               
+                    &kp C_PREVIOUS                           &kp C_NEXT
                 >;       
         };
 
         LOWER {
         bindings = < 
-                    &bt BT_PRV   &bt BT_CLR   &bt BT_NXT         &ctrl_n   
-                    &none        &none        &none              &ctrl_g   &trans
-                    &bootloader               &kp C_VOLUME_DOWN  &ctrl_b   &kp C_VOLUME_UP
+                    &bt BT_NXT &trans &trans  
+                    &none &none &none &none
+                    &kp ENTER         &bootloader 
                 >;
         };
     };
