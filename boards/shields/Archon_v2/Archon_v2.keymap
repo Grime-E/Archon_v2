@@ -193,9 +193,9 @@
 
         LOWER {
         bindings = < 
-                    &bt BT_SEL &trans &trans  
+                    &bt BT_SEL   &trans   &trans  
                     &ctrl_b &ctrl_p &none &none
-                    &kp ENTER         &bootloader 
+                    &kp ENTER             &bootloader 
                 >;
         };
     };
