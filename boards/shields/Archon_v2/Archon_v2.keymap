@@ -19,14 +19,14 @@
 
         };
 
-        td_printers: tap_dance_printers {
+        td_printers_gtx: tap_dance_printers_gtx {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>; // Time window to register the second tap
             bindings = <&Plus_1_Plus>, <&Plus_2_Plus>;
         };
 
-        td_printers_2: tap_dance_printers_2 {
+        td_printers_600: tap_dance_printers_600 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>; // Time window to register the second tap
@@ -179,7 +179,7 @@
         bindings = < 
                     &ctrl_shift_n  &ctrl_n        &lt_gtx LOW 0
                     &kp F1    &kp F2    &kp F3    &kp F4            
-                    &td_printers                  &td_printers_2
+                    &td_printers_gtx              &td_printers_600
                 >;       
         };
 
@@ -193,8 +193,8 @@
 
         LOWER {
         bindings = < 
-                    &bt BT_NXT &trans &trans  
-                    &none &none &none &none
+                    &bt BT_SEL &trans &trans  
+                    &ctrl_b &ctrl_p &none &none
                     &kp ENTER         &bootloader 
                 >;
         };
