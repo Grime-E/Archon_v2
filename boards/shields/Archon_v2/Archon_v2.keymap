@@ -15,27 +15,26 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&ctrl_g>;
-
+            // Changed from macro to standard kp
+            bindings = <&mo>, <&kp>;
         };
 
         td_printers_gtx: tap_dance_printers_gtx {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>; // Time window to register the second tap
+            tapping-term-ms = <200>; 
             bindings = <&Plus_1_Plus>, <&Plus_2_Plus>;
         };
 
         td_printers_600: tap_dance_printers_600 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>; // Time window to register the second tap
+            tapping-term-ms = <200>; 
             bindings = <&ENTER_1_ENTER>, <&ENTER_2_ENTER>;
         };
     };
 
     macros {
-
          // Macro for .arx6e
          arx6e: arx6e {
             compatible = "zmk,behavior-macro";
@@ -47,14 +46,13 @@
                 <&macro_tap &kp X>,
                 <&macro_tap &kp N6>,
                 <&macro_tap &kp E>;
-
         };
 
         // Macro for Plus + 1 + Plus (Printer 1)
         Plus_1_Plus: Plus_1_Plus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <500>;    // Add this line to set the wait time
+            wait-ms = <500>;    
             bindings =
                 <&macro_tap &kp KP_PLUS>,
                 <&macro_tap &kp N1>,
@@ -65,7 +63,7 @@
         Plus_2_Plus: Plus_2_Plus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <500>;    // Add this line to set the wait time
+            wait-ms = <500>;    
             bindings =
                 <&macro_tap &kp KP_PLUS>,
                 <&macro_tap &kp N2>,
@@ -76,7 +74,7 @@
         ENTER_1_ENTER: ENTER_1_ENTER {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <500>;    // Add this line to set the wait time   
+            wait-ms = <500>;      
             bindings =
                 <&macro_tap &kp ENTER>,
                 <&macro_tap &kp N1>,
@@ -87,88 +85,11 @@
         ENTER_2_ENTER: ENTER_2_ENTER {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <500>;    // Add this line to set the wait time
+            wait-ms = <500>;    
             bindings =
                 <&macro_tap &kp ENTER>,
                 <&macro_tap &kp N2>,
                 <&macro_tap &kp ENTER>;
-        };
-
-        // Macro for Ctrl + G (Toggle GTX600 mode)
-        ctrl_g: ctrl_g {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press &kp LEFT_CONTROL>,
-                <&macro_tap &kp G>,
-                <&macro_release &kp LEFT_CONTROL>;
-        };
-
-        // Macro for Ctrl + P (Capture)
-        ctrl_p: ctrl_p {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press &kp RIGHT_CONTROL>,
-                <&macro_tap &kp P>,
-                <&macro_release &kp RIGHT_CONTROL>;
-        };
-
-
-        // Macro for DTG Automation (powershell launcher)
-        dtg: dtg {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press &kp LEFT_CONTROL>,
-                <&macro_press &kp LEFT_ALT>,
-                <&macro_tap &kp D>,
-                <&macro_release &kp LEFT_CONTROL>,
-                <&macro_release &kp LEFT_ALT>;
-        };
-
-        // Macro for WRO Sort (powershell launcher)
-        sort: sort {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press &kp LEFT_CONTROL>,
-                <&macro_press &kp LEFT_ALT>,
-                <&macro_tap &kp W>,
-                <&macro_release &kp LEFT_CONTROL>,
-                <&macro_release &kp LEFT_ALT>;
-        };
-      
-        // Macro for Ctrl + B (Back)
-        ctrl_b: ctrl_b {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press &kp LEFT_CONTROL>,
-                <&macro_tap &kp B>,
-                <&macro_release &kp LEFT_CONTROL>;
-        };
-      
-        // Macro for DTG Automation (Next)
-        ctrl_n: ctrl_n {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press &kp LEFT_CONTROL>,
-                <&macro_tap &kp N>,
-                <&macro_release &kp LEFT_CONTROL>;
-        };
-
-        // Macro for DTG Automation (Previous)
-        ctrl_shift_n: ctrl_shift_n {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press &kp LEFT_CONTROL>,
-                <&macro_press &kp LEFT_SHIFT>,
-                <&macro_tap &kp N>,
-                <&macro_release &kp LEFT_CONTROL>,
-                <&macro_release &kp LEFT_SHIFT>;
         };
     };
 
@@ -177,25 +98,25 @@
 
         DEFAULT {
         bindings = < 
-                    &ctrl_shift_n  &ctrl_n        &lt_gtx LOW 0
-                    &kp F1    &kp F2    &kp F3    &kp F4            
+                    &kp LC(LS(N))  &kp LC(N)      &lt_gtx LOW LC(G)
+                    &kp F1         &kp F2         &kp F3    &kp F4            
                     &td_printers_gtx              &td_printers_600
                 >;       
         };
 
         LOW {
         bindings = < 
-                    &kp C_VOLUME_UP   &mo LOWER              &trans               
-                    &kp C_VOLUME_DOWN &kp C_PLAY_PAUSE &sort &dtg               
-                    &kp C_PREVIOUS                           &kp C_NEXT
+                    &kp C_VOLUME_UP   &mo LOWER        &trans               
+                    &kp C_VOLUME_DOWN &kp C_PLAY_PAUSE &kp LC(LA(W))  &kp LC(LA(D))               
+                    &kp C_PREVIOUS                     &kp C_NEXT
                 >;       
         };
 
         LOWER {
         bindings = < 
-                    &bt BT_SEL   &trans   &trans  
-                    &ctrl_b &ctrl_p &none &none
-                    &kp ENTER             &bootloader 
+                    &bt BT_SEL 0   &trans    &trans  
+                    &kp LC(B)      &kp RC(P) &none &none
+                    &kp ENTER                &bootloader 
                 >;
         };
     };
