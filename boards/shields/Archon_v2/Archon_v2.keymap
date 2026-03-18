@@ -23,14 +23,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>; 
-            bindings = <&Plus_1_Plus>, <&Plus_2_Plus>;
+            bindings = <&Plus_1_Plus>, <&ENTER_1_ENTER>;
         };
 
         td_printers_600: tap_dance_printers_600 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>; 
-            bindings = <&ENTER_1_ENTER>, <&ENTER_2_ENTER>;
+            bindings = <&Plus_2_Plus>, <&ENTER_2_ENTER>;
         };
     };
 
