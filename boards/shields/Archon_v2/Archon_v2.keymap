@@ -81,7 +81,7 @@
                 <&macro_tap &kp ENTER>;
         };
 
-        // Macro for ENTER + 2 + ENTER (GRX6 Printer 2)
+        // Macro for ENTER + 2 + ENTER (GRX6 Printer 2!)
         ENTER_2_ENTER: ENTER_2_ENTER {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
