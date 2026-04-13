@@ -115,7 +115,7 @@
         LOWER {
         bindings = < 
                     &bt BT_SEL 0 &trans          &trans  
-                    &kp LC(B)    &kp RC(P) &none &none
+                    &kp LC(B)    &kp RC(P) &bt BT_CLR &none
                     &kp ENTER                   &bootloader 
                 >;
         };
